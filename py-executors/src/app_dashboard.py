@@ -459,6 +459,7 @@ if menu == "🎨 Agentic Pipeline (Spatial Canvas)":
 
     # 🏷️ DYNAMIC BUSINESS DOMAIN DETECTION
     ds_name = st.session_state.get("current_dataset_name", "clients.csv").lower()
+    risk_score = 65  # Default risk score baseline
     if "client" in ds_name or "telecom" in ds_name:
         detected_domain = "📞 Telecom & Churn Prediction"
         domain_badge_color = "#06b6d4"
@@ -468,14 +469,17 @@ if menu == "🎨 Agentic Pipeline (Spatial Canvas)":
         detected_domain = "💰 Finance & Credit Risk"
         domain_badge_color = "#fbbf24"
         okf_formulas = "Debt-to-Income (DTI), Credit Utilization, DSCR Ratio"
+        risk_score = 68
     elif "diabet" in ds_name or "wdbc" in ds_name or "obesity" in ds_name:
         detected_domain = "🏥 Healthcare & Biomedical Diagnostics"
         domain_badge_color = "#34d399"
         okf_formulas = "Body Mass Index (BMI), Mean Arterial Pressure (MAP)"
+        risk_score = 82
     else:
         detected_domain = "📊 General Tabular MLOps"
         domain_badge_color = "#a78bfa"
         okf_formulas = "Non-linear ratios, Yeo-Johnson, Cyclic encoding"
+        risk_score = 60
 
     # Detected Domain Banner
     st.markdown(f"""
