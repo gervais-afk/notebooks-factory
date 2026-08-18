@@ -105,7 +105,7 @@ We built **DATASET AUTOMATOR** to transform raw enterprise tabular datasets into
 
 | Champ Devpost | Valeur à renseigner |
 |---|---|
-| **GitHub Repository URL** | `https://github.com/gervais-afk/dataset-automator` |
+| **GitHub Repository URL** | `https://github.com/gervais-afk/notebooks-factory` |
 | **Demo Video URL** | `https://youtu.be/...` *(Lien YouTube de votre vidéo de 3 min 45 s)* |
 | **Google Developer Profile** | `https://me.developers.google.com/u/me` *(Badge GEAR)* |
 
