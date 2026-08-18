@@ -1,6 +1,96 @@
 [
   {
     "$schema": "https://dataset-automator.io/schemas/execution-receipt.v1.json",
+    "receipt_id": "rec_20260818_213102_230b98",
+    "session": {
+      "thread_id": "thread-dataset-01",
+      "run_id": "run-default",
+      "timestamp": "2026-08-18T20:31:02.634707+00:00"
+    },
+    "provenance": {
+      "dataset": {
+        "name": "clients.csv",
+        "sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "execution_flow": {
+      "steps_completed": [
+        {
+          "step": 1,
+          "name": "Ingestion",
+          "status": "SUCCESS"
+        }
+      ],
+      "explainable_rationale": "Champion TabFM certified with ROC-AUC 0.942"
+    },
+    "guardrails_audit": {
+      "rules_checked": [
+        {
+          "guardrail": "VIF",
+          "status": "PASSED"
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "model": {
+        "path": "model.skops"
+      }
+    },
+    "cryptographic_attestation": {
+      "signing_authority": "Dataset_Automator_Kernel_Sandbox",
+      "signature_algorithm": "RSASSA-PSS-SHA256",
+      "payload_sha256": "203f2a9ac114e676322f84316d8106e257047908bb87a9b43cb7e1e6bfead694",
+      "attestation_signature": "q9z5unpQsis4OvKlr9zGbsapmm/hatF2PJubuE9UUVCfkqNcKOgzUX6l8jNFVxUjw5JP7qau+9LWVtrU3OREurptJzEmCzm4fRlOtUUO9lJ91LhgVACmLkp5W2j/eest2MKgre/eZDEBApxEoEn9QU2loepc5V4/PtRhGs4exwXOeEQrlYhQ6e/me+/Kjk5Sq+4CSLnp7YZjFSsV3H3SS740gRKnmPkOJojf7XpIX57xAGLkHx21rEiRaHIWiqIbAN8RpJffKchJXnBdUrBD4BSEyAIJzlk+F7H1G+qAwJBFw+bwoXKcpQlwz94ifkcZaaBdKCA5JS24O7jdG0/upA==",
+      "public_key_fingerprint": "7738caf30bcc4054"
+    }
+  },
+  {
+    "$schema": "https://dataset-automator.io/schemas/execution-receipt.v1.json",
+    "receipt_id": "rec_20260818_212943_de3f62",
+    "session": {
+      "thread_id": "thread-dataset-01",
+      "run_id": "run-default",
+      "timestamp": "2026-08-18T20:29:43.595946+00:00"
+    },
+    "provenance": {
+      "dataset": {
+        "name": "clients.csv",
+        "sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "execution_flow": {
+      "steps_completed": [
+        {
+          "step": 1,
+          "name": "Ingestion",
+          "status": "SUCCESS"
+        }
+      ],
+      "explainable_rationale": "Champion TabFM certified with ROC-AUC 0.942"
+    },
+    "guardrails_audit": {
+      "rules_checked": [
+        {
+          "guardrail": "VIF",
+          "status": "PASSED"
+        }
+      ]
+    },
+    "generated_artifacts": {
+      "model": {
+        "path": "model.skops"
+      }
+    },
+    "cryptographic_attestation": {
+      "signing_authority": "Dataset_Automator_Kernel_Sandbox",
+      "signature_algorithm": "RSASSA-PSS-SHA256",
+      "payload_sha256": "ebbbc68e55dd3026713f8724be28b1a0034b9c094d9acfc68509d712992aaf5c",
+      "attestation_signature": "dmWvhA4I2T0rIka9hQ4eQsOjHsK8QV4AicxDBnPEM3lRxbeLNl/rWDWBog/GKx58gceZxbbBZJkgptlCELE34a8PkYrBukHT4kT+fqe5ZjP8GJ4olNMqP896sXUkCF5YMXTwOvN4OX8lykspPA+Bv6sfEoRolBkJ3km9dG+6F9qSDnRDA8DYn87Pr6eBqSkCt7/hz+N042BgrtWgDED3cQt9cH4NsfFG6IcKnVBkugV9KBp0fR2+0A8nMqPvmIamY6yc9ac2CkPGQ91bvoIu86SgBtsnfAwAaCI+Kmp8CDFYu5fN5qPo47Z6skZZKuD7pO2dbR/MFB644IDKL1qsfw==",
+      "public_key_fingerprint": "7738caf30bcc4054"
+    }
+  },
+  {
+    "$schema": "https://dataset-automator.io/schemas/execution-receipt.v1.json",
     "receipt_id": "rec_20260815_182413_21f1a6",
     "session": {
       "thread_id": "thread-dataset-01",
