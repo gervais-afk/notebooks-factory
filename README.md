@@ -20,49 +20,52 @@
   <img src="architecture_diagram.jpg" alt="Dataset Automator Master 6-Layer Architecture" width="100%" />
 </div>
 
-<details open>
-<summary><b>📐 Interactive Architecture & Component Flowchart</b></summary>
-<br>
-
 ```mermaid
-flowchart TD
-    subgraph Ingestion ["1. Ingestion"]
-        BQ["Google BigQuery Zero-ETL (bigframes)"]
-        DuckDB["DuckDB Lakehouse (In-memory OLAP)"]
-        CSVData["Tabular Data (CSV & Excel)"]
+graph TD
+    classDef input fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#ffffff,rx:6px;
+    classDef memory fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff,rx:6px;
+    classDef agent fill:#31104b,stroke:#c084fc,stroke-width:2px,color:#ffffff,rx:6px;
+    classDef engine fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ffffff,rx:6px;
+    classDef trust fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#ffffff,rx:6px;
+    classDef output fill:#18181b,stroke:#f472b6,stroke-width:2px,color:#ffffff,rx:6px;
+
+    subgraph Ingestion ["📥 1. Multi-Modal Enterprise Ingestion"]
+        BQ["🏛️ Google BigQuery Zero-ETL (bigframes 48ms)"]:::input
+        DuckDB["🦆 DuckDB Local Lakehouse (In-memory OLAP)"]:::input
+        CSVData["📊 Tabular CSV & Excel (Telecom, Finance, Health)"]:::input
     end
 
-    subgraph Memory ["2. GraphRAG & Memory"]
-        Neo4j["Neo4j 5.20 GraphRAG (117 OKF Cards)"]
-        ContextMem["Multi-Tier SQLite Memory (TTL Decay)"]
+    subgraph Memory ["🕸️ 2. Domain Ontological GraphRAG & Memory"]
+        Neo4j["🕸️ Neo4j 5.20 GraphRAG (117 OKF Cards / 407 Triples)"]:::memory
+        ContextMem["🗄️ Multi-Tier SQLite Memory (TTL Decay & Offload)"]:::memory
     end
 
-    subgraph Reasoning ["3. Orchestration & Reasoning"]
-        GeminiFlash["Google Gemini 3.5 Flash"]
-        GeminiPro["Google Gemini 3.5 Pro"]
-        AdaptiveRouter["Adaptive Model Router (125x Cost Arbitrage)"]
-        LoopBreaker["Agent Loop Breaker (SHA-256 & Jaccard)"]
+    subgraph Reasoning ["🧠 3. Agentic Orchestration & Reasoning"]
+        GeminiFlash["⚡ Google Gemini 3.5 Flash (Sub-second Reasoning)"]:::agent
+        GeminiPro["🧠 Google Gemini 3.5 Pro (Deep Deliberation)"]:::agent
+        AdaptiveRouter["🔀 Adaptive Model Router (125x Cost Reduction)"]:::agent
+        LoopBreaker["🛑 Agent Loop Breaker (SHA-256 & Jaccard Intercept)"]:::agent
     end
 
-    subgraph Arena ["4. Foundation Arena & Governance"]
-        TabFM["Google TabFM Foundation Champion"]
-        XGB["Boosted Tree Benchmarks (XGBoost, LightGBM)"]
-        WhatIf["Google PAIR What-If Tool (Counterfactuals)"]
-        ModelCard["Google Model Card Toolkit (Material HTML)"]
-        RedTeam["Autonomous Red Teamer (4 Attack Vectors)"]
+    subgraph Arena ["🏆 4. Foundation Arena & Governance Suite"]
+        TabFM["🌟 Google TabFM Foundation Champion"]:::engine
+        XGB["🌲 Boosted Tree Benchmarks (XGBoost, LightGBM, CatBoost)"]:::engine
+        WhatIf["🔮 Google PAIR What-If Tool (Sensitivity & Counterfactuals)"]:::engine
+        ModelCard["📑 Google Model Card Toolkit (Material HTML & JSON)"]:::engine
+        RedTeam["⚔️ Autonomous Red Teamer (4 Attack Vectors)"]:::engine
     end
 
-    subgraph Governance ["5. Attestation & HITL"]
-        HITL["HITL Stop & Intervene Gates"]
-        CryptoEngine["EU AI Act Attestation (RSASSA-PSS-SHA256)"]
-        FlightRecorder["Agent Flight Recorder (OTLP Spans)"]
+    subgraph Governance ["🔐 5. Cryptographic Attestation & HITL Supervision"]
+        HITL["⛩️ HITL Stop & Intervene Gates (SmartDiff Preview)"]:::trust
+        CryptoEngine["🔐 EU AI Act Attestation Engine (RSASSA-PSS-SHA256)"]:::trust
+        FlightRecorder["🚀 Agent Flight Recorder (OTLP Spans & Time-Travel)"]:::trust
     end
 
-    subgraph Deliverables ["6. Production Deliverables"]
-        CanvasUI["Spatial SVG Execution Canvas (60 FPS)"]
-        CopilotChat["Antigravity Copilot (Vertex AI Multi-Model)"]
-        Notebook55["Certified Jupyter Notebook (55 Cells / 100%)"]
-        VisualReport["Standalone MLOps HTML Report"]
+    subgraph Deliverables ["📦 6. Enterprise Production Deliverables"]
+        CanvasUI["🎨 Spatial SVG Execution Canvas (60 FPS)"]:::output
+        CopilotChat["💬 Antigravity Copilot (Vertex AI Multi-Model)"]:::output
+        Notebook55["📓 Certified Jupyter Notebook (55 Cells / 100% Score)"]:::output
+        VisualReport["📊 Standalone MLOps HTML Report"]:::output
     end
 
     CSVData --> Neo4j
@@ -82,7 +85,6 @@ flowchart TD
     FlightRecorder --> VisualReport
     LoopBreaker --> CopilotChat
 ```
-</details>
 
 ---
 
