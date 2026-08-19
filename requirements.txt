@@ -1,21 +1,50 @@
 # ===============================================================================
-# DATASET AUTOMATOR — STREAMLIT COMMUNITY CLOUD REQUIREMENTS
+# DATASET AUTOMATOR — STREAMLIT COMMUNITY CLOUD (PRODUCTION)
+# Minimal cloud-safe requirements — heavy local-only deps removed.
 # ===============================================================================
+
+# ── Core UI ──────────────────────────────────────────────────────────────────
 streamlit>=1.36.0
+
+# ── Data Stack ───────────────────────────────────────────────────────────────
 pandas>=2.2.0,<3
 numpy>=1.26.0
+openpyxl>=3.1.0
+
+# ── ML Stack ─────────────────────────────────────────────────────────────────
 scikit-learn>=1.4.0
 xgboost>=2.0.0
 lightgbm>=4.3.0
+statsmodels>=0.14.0
+
+# ── Visualization ────────────────────────────────────────────────────────────
+plotly>=5.20.0
+
+# ── Explainability ───────────────────────────────────────────────────────────
+shap>=0.45.0
+
+# ── Security & Compliance ────────────────────────────────────────────────────
 cryptography>=42.0.0
 skops>=0.9.0
-shap>=0.45.0
-statsmodels>=0.14.0
-neo4j>=5.18.0
-google-cloud-aiplatform>=1.50.0
-google-cloud-bigquery>=3.20.0
-bigframes>=1.4.0
-fastmcp>=0.4.0
+
+# ── Notebook Generation ──────────────────────────────────────────────────────
 nbformat>=5.10.0
-requests>=2.31.0
+nbconvert>=7.16.0
+
+# ── Google AI ────────────────────────────────────────────────────────────────
 google-generativeai>=0.8.0
+
+# ── HTTP / API Fallback (OpenRouter) ─────────────────────────────────────────
+requests>=2.31.0
+
+# ──────────────────────────────────────────────────────────────────────────────
+# NOTE: The following packages are LOCAL-ONLY (Neo4j desktop, GCP BigQuery,
+# Firebase emulators, FastMCP kernel). They are NOT installed on Streamlit
+# Community Cloud. All imports are inside try/except with graceful fallback.
+#
+#   neo4j>=5.18.0
+#   google-cloud-aiplatform>=1.50.0
+#   google-cloud-bigquery>=3.20.0
+#   bigframes>=1.4.0
+#   fastmcp>=0.4.0
+# ──────────────────────────────────────────────────────────────────────────────

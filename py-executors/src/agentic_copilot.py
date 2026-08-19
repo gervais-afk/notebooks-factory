@@ -8,6 +8,11 @@ Agentic chatbot with tools (Function Calling):
   3. Google PAIR What-If Counterfactual Computation on demand
   4. EU AI Act Cryptographic Receipt Integrity Check
   5. Guardrail Audit and Explanation (VIF, Durbin-Watson, Overfitting)
+
+LLM Backend:
+  PRIMARY  → Google Gemini (gemini-2.0-flash / pro)
+  FALLBACK → OpenRouter   (Gemma 2 27B, Claude, GPT-4o, etc.)
+  OFFLINE  → Deterministic keyword routing (zero dependency)
 """
 
 import os
@@ -27,15 +32,29 @@ PROJECT_ROOT = DATASET_AUTO_DIR.parent
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUTS_DIR = WORKSPACE_DIR / "outputs"
 
+# ── Import the unified secrets / LLM router ──────────────────────────────────
+try:
+    from secrets_loader import call_llm, get_api_status
+    _LLM_AVAILABLE = True
+except ImportError:
+    _LLM_AVAILABLE = False
+    def call_llm(prompt, **kw):          # pragma: no cover
+        return {"text": prompt, "provider": "offline", "model": "none", "error": "secrets_loader not found"}
+    def get_api_status():                 # pragma: no cover
+        return {"active_provider": "offline"}
+
 
 class AgenticCopilot:
     """Agentic conversational engine with MLOps tooling."""
 
+    SYSTEM_PROMPT = (
+        "You are Antigravity Copilot, the expert MLOps agentic assistant for Dataset Automator. "
+        "You orchestrate Google TabFM models, the What-If analyzer, guardrails, and EU AI Act compliance. "
+        "Respond in English, be concise, structured (use markdown), and precise."
+    )
+
     def __init__(self):
-        self.system_prompt = (
-            "You are Antigravity Copilot, the expert MLOps agentic assistant for Dataset Automator. "
-            "You orchestrate Google TabFM models, the What-If analyzer, guardrails, and EU AI Act compliance."
-        )
+        self.system_prompt = self.SYSTEM_PROMPT
 
     def process_query(self, user_query: str, current_dataset_name: str = "clients.csv", model_name: str = "Gemini 3.5 Flash") -> Dict[str, Any]:
         """
@@ -141,24 +160,40 @@ class AgenticCopilot:
                 "In case of VIF > 10 violation, the Guardrail Intercept Panel suspends execution and proposes removing the variable or applying Ridge L2 regularization."
             )
 
-        # 6. General query
+        # 6. General free-form query → live LLM (Gemini → OpenRouter → offline)
         else:
-            response_text = (
-                f"🤖 **Antigravity Copilot** at your service.\n\n"
-                f"I can execute direct actions for you:\n"
-                f"- **What-If Tool** : *« Compute a counterfactual to change the decision »*\n"
-                f"- **Red Team** : *« Launch a Target Leakage and Outliers attack »*\n"
-                f"- **Crypto Audit** : *« Verify the EU AI Act receipt signature »*\n"
-                f"- **Models** : *« Why is Google TabFM the champion over XGBoost? »*\n"
-                f"- **Guardrails** : *« What is the VIF and Durbin-Watson status? »*"
+            tool_called = "live_llm_router"
+            # Build a context-aware prompt
+            llm_prompt = (
+                f"The user is using Dataset Automator, an agentic MLOps platform.\n"
+                f"Active dataset: {current_dataset_name}\n\n"
+                f"User question: {user_query}\n\n"
+                "Answer as a technical MLOps expert. Be concise and structured."
             )
+            llm_result = call_llm(
+                prompt=llm_prompt,
+                model_name="gemini-2.0-flash",
+                system=self.system_prompt,
+            )
+            response_text = llm_result["text"]
+            # Track which provider was actually used for telemetry
+            model_name = f"{llm_result['provider'].title()} / {llm_result['model']}"
+            # Surface fallback warning transparently
+            if llm_result.get("error"):
+                response_text += f"\n\n> ⚠️ *{llm_result['error']}*"
+
+        # Determine real provider label for telemetry
+        if tool_called == "live_llm_router":
+            provider_label = model_name  # already set above
+        else:
+            provider_label = "Google Cloud Vertex AI (Deterministic Tool)"
 
         return {
             "query": user_query,
             "tool_called": tool_called,
             "response": response_text,
             "model_name": model_name,
-            "provider": "Google Cloud Vertex AI",
+            "provider": provider_label,
             "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
         }
 

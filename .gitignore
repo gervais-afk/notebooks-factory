@@ -48,3 +48,7 @@ ts-orchestrator/.ingested_files.json
 .idea/
 .DS_Store
 Thumbs.db
+
+# Streamlit secrets (NEVER commit)
+.streamlit/secrets.toml
+

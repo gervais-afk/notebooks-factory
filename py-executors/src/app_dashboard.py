@@ -413,6 +413,35 @@ section[data-testid="stFileUploadDropzone"]:hover {
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 sidebar_logo_html = f'<img src="data:image/jpeg;base64,{LOGO_B64}" style="width:48px;height:48px;border-radius:12px;object-fit:cover;box-shadow:0 0 16px rgba(139,92,246,0.6);border:1.5px solid rgba(139,92,246,0.6);flex-shrink:0;">' if LOGO_B64 else '<div style="background:linear-gradient(135deg,#06b6d4,#8b5cf6,#d946ef);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 16px rgba(139,92,246,0.6);"><span style="font-size:24px;">⚡</span></div>'
 
+# ── Sidebar: Live API Status Widget ───────────────────────────────────────────
+try:
+    from secrets_loader import get_api_status
+    _api_st = get_api_status()
+    _gemini_icon = "✅" if _api_st["gemini_configured"] else "⚠️"
+    _or_icon     = "✅" if _api_st["openrouter_configured"] else "⚠️"
+    _gemini_col  = "#10b981" if _api_st["gemini_configured"] else "#f59e0b"
+    _or_col      = "#10b981" if _api_st["openrouter_configured"] else "#f59e0b"
+    _provider_label = _api_st["active_provider"].title()
+    st.sidebar.markdown(f"""
+<div style="margin-top:16px;padding:12px;background:rgba(9,9,11,0.9);border:1px solid rgba(39,39,42,0.5);border-radius:10px;font-size:0.72rem;">
+    <div style="color:#71717a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">🔑 LLM Provider Status</div>
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="color:#a1a1aa;">Gemini (Primary)</span>
+        <span style="color:{_gemini_col};font-weight:700;">{_gemini_icon} {_api_st['gemini_key_preview']}</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+        <span style="color:#a1a1aa;">OpenRouter (Fallback)</span>
+        <span style="color:{_or_col};font-weight:700;">{_or_icon} {_api_st['openrouter_key_preview']}</span>
+    </div>
+    <div style="border-top:1px solid rgba(39,39,42,0.5);padding-top:6px;display:flex;justify-content:space-between;">
+        <span style="color:#71717a;">Active</span>
+        <span style="color:#c4b5fd;font-weight:700;">{_provider_label}</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+except Exception:
+    pass  # Status widget is cosmetic — never block app startup
+
 st.sidebar.markdown(f"""
 <div style="background:linear-gradient(145deg,rgba(24,24,27,0.9),rgba(15,15,18,0.95));border:1px solid rgba(139,92,246,0.25);border-radius:14px;padding:16px;margin-bottom:20px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 20px rgba(139,92,246,0.08);">
     {sidebar_logo_html}
