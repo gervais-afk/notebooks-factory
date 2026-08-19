@@ -1,0 +1,7 @@
+# GitHub Linguist Language Detection Configuration
+# Mark generated HTML reports, model cards, and artifacts as generated so Python & TypeScript reflect true codebase distribution
+
+*.html linguist-generated=true
+workspace/outputs/** linguist-generated=true
+*.ipynb linguist-generated=true
+*.json linguist-generated=true
