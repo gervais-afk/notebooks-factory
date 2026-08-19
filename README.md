@@ -17,57 +17,62 @@
 ## 🌟 Master Technical Architecture & Data Lineage
 
 ```mermaid
-graph TD
-    classDef input fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#ffffff,rx:8px;
-    classDef brain fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff,rx:8px;
-    classDef foundation fill:#14532d,stroke:#4ade80,stroke-width:2px,color:#ffffff,rx:8px;
-    classDef governance fill:#581c87,stroke:#c084fc,stroke-width:2px,color:#ffffff,rx:8px;
-    classDef security fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#ffffff,rx:8px;
-    classDef output fill:#451a03,stroke:#fb923c,stroke-width:2px,color:#ffffff,rx:8px;
-
-    subgraph Layer1 ["📥 1. Multi-Modal Enterprise Ingestion Layer"]
-        BQ["🏛️ Google BigQuery Zero-ETL<br/><i>(bigframes pushdown in 48ms)</i>"]:::input
-        DuckDB["🦆 DuckDB Local Lakehouse<br/><i>(In-memory OLAP <10ms)</i>"]:::input
-        CSVData["📊 Tabular CSV & Excel<br/><i>(Telecom, Finance, Health)</i>"]:::input
+flowchart TD
+    subgraph Ingestion ["📥 1. Multi-Modal Enterprise Ingestion"]
+        BQ["🏛️ Google BigQuery Zero-ETL (bigframes 48ms)"]
+        DuckDB["🦆 DuckDB Local Lakehouse (In-memory OLAP)"]
+        CSVData["📊 Tabular CSV & Excel (Telecom, Finance, Health)"]
     end
 
-    subgraph Layer2 ["🕸️ 2. Domain Ontological GraphRAG & Memory"]
-        Neo4j["🕸️ Neo4j 5.20 GraphRAG<br/><i>(117 OKF v0.2 Domain Cards & 407 Triples)</i>"]:::brain
-        ContextMem["🗄️ Multi-Tier SQLite Memory<br/><i>(5 tiers with TTL decay & LargeJson offload)</i>"]:::brain
+    subgraph Memory ["🕸️ 2. Domain Ontological GraphRAG & Memory"]
+        Neo4j["🕸️ Neo4j 5.20 GraphRAG (117 OKF Cards / 407 Triples)"]
+        ContextMem["🗄️ Multi-Tier SQLite Memory (TTL Decay & Offload)"]
     end
 
-    subgraph Layer3 ["🧠 3. Agentic Orchestrator & Reasoning Engine"]
-        GeminiFlash["⚡ Google Gemini 3.5 Flash<br/><i>(Fast sub-second reasoning)</i>"]:::brain
-        GeminiPro["🧠 Google Gemini 3.5 Pro<br/><i>(Deep deliberative proof)</i>"]:::brain
-        AdaptiveRouter["🔀 Adaptive Model Router<br/><i>(Cascade routing slashing token costs 125×)</i>"]:::brain
-        LoopBreaker["🛑 Agent Loop Breaker<br/><i>(SHA-256 cycles & Jaccard > 0.60 intercept)</i>"]:::brain
+    subgraph Reasoning ["🧠 3. Agentic Orchestration & Reasoning"]
+        GeminiFlash["⚡ Google Gemini 3.5 Flash (Sub-second Reasoning)"]
+        GeminiPro["🧠 Google Gemini 3.5 Pro (Deep Deliberation)"]
+        AdaptiveRouter["🔀 Adaptive Model Router (125x Cost Reduction)"]
+        LoopBreaker["🛑 Agent Loop Breaker (SHA-256 & Jaccard Intercept)"]
     end
 
-    subgraph Layer4 ["🏆 4. Foundation Arena & Governance Suite"]
-        TabFM["🌟 Google TabFM Foundation Champion<br/><i>(Zero-shot tabular embeddings)</i>"]:::foundation
-        XGB["🌲 Boosted Tree Benchmarks<br/><i>(XGBoost, LightGBM, CatBoost)</i>"]:::foundation
-        WhatIf["🔮 Google PAIR What-If Tool<br/><i>(Sensitivity & Nearest Counterfactual Search)</i>"]:::governance
-        ModelCard["📑 Google Model Card Toolkit<br/><i>(Material Design HTML & JSON Identity Cards)</i>"]:::governance
-        RedTeam["⚔️ Autonomous Red Teamer<br/><i>(Target Leakage, Outliers +500%, Noise, Bias)</i>"]:::governance
+    subgraph Arena ["🏆 4. Foundation Arena & Governance Suite"]
+        TabFM["🌟 Google TabFM Foundation Champion"]
+        XGB["🌲 Boosted Tree Benchmarks (XGBoost, LightGBM, CatBoost)"]
+        WhatIf["🔮 Google PAIR What-If Tool (Sensitivity & Counterfactuals)"]
+        ModelCard["📑 Google Model Card Toolkit (Material HTML & JSON)"]
+        RedTeam["⚔️ Autonomous Red Teamer (4 Attack Vectors)"]
     end
 
-    subgraph Layer5 ["🔐 5. Cryptographic Attestation & HITL Supervision"]
-        HITL["⛩️ HITL Stop & Intervene Gates<br/><i>(SmartDiff & Side-by-Side Impact Preview)</i>"]:::security
-        CryptoEngine["🔐 EU AI Act Attestation Engine<br/><i>(RSASSA-PSS-SHA256 non-repudiable black box)</i>"]:::security
-        FlightRecorder["🚀 Agent Flight Recorder<br/><i>(OTLP Spans, Chain-of-Thought & Time-Travel)</i>"]:::security
+    subgraph Governance ["🔐 5. Cryptographic Attestation & HITL Supervision"]
+        HITL["⛩️ HITL Stop & Intervene Gates (SmartDiff Preview)"]
+        CryptoEngine["🔐 EU AI Act Attestation Engine (RSASSA-PSS-SHA256)"]
+        FlightRecorder["🚀 Agent Flight Recorder (OTLP Spans & Time-Travel)"]
     end
 
-    subgraph Layer6 ["📦 6. Enterprise Production Deliverables"]
-        CanvasUI["🎨 Spatial SVG Execution Canvas<br/><i>(60 FPS Bézier particles & Ghost branches)</i>"]:::output
-        CopilotChat["💬 Antigravity Copilot<br/><i>(Vertex AI multi-model conversational assistant)</i>"]:::output
-        Notebook55["📓 Certified Jupyter Notebook<br/><i>(55 cells, 14 sections, 100/100 Forensic Score)</i>"]:::output
-        VisualReport["📊 Standalone MLOps HTML Report<br/><i>(Interactive diagnostic briefcase)</i>"]:::output
+    subgraph Deliverables ["📦 6. Enterprise Production Deliverables"]
+        CanvasUI["🎨 Spatial SVG Execution Canvas (60 FPS)"]
+        CopilotChat["💬 Antigravity Copilot (Vertex AI Multi-Model)"]
+        Notebook55["📓 Certified Jupyter Notebook (55 Cells / 100% Score)"]
+        VisualReport["📊 Standalone MLOps HTML Report"]
     end
 
-    Layer1 --> Layer2 --> Layer3 --> Layer4 --> Layer5 --> Layer6
-    WhatIf <--> HITL
-    TabFM <--> CryptoEngine
-    RedTeam <--> FlightRecorder
+    CSVData --> Neo4j
+    BQ --> ContextMem
+    DuckDB --> ContextMem
+    Neo4j --> GeminiFlash
+    ContextMem --> AdaptiveRouter
+    GeminiFlash --> TabFM
+    GeminiPro --> LoopBreaker
+    TabFM --> WhatIf
+    XGB --> ModelCard
+    WhatIf --> HITL
+    ModelCard --> CryptoEngine
+    RedTeam --> FlightRecorder
+    HITL --> CanvasUI
+    CryptoEngine --> Notebook55
+    FlightRecorder --> VisualReport
+    LoopBreaker --> CopilotChat
 ```
 
 ---
