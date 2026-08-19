@@ -256,6 +256,34 @@ h1, h2, h3, h4, h5            { color: var(--text) !important; font-weight: 700 
   background: rgba(16,185,129,0.22) !important; box-shadow: 0 0 12px var(--success-glow) !important; transform: translateY(-1px) !important;
 }
 
+/* ── §9.5 POPOVER & HELP BUTTON (Améthyste / Cyan Turbo Glow) ── */
+[data-testid="stPopover"] > button,
+div[data-testid="stPopover"] > button {
+  background: linear-gradient(135deg, rgba(139,92,246,0.35) 0%, rgba(6,182,212,0.25) 100%) !important;
+  border: 1.5px solid #8b5cf6 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 16px rgba(139,92,246,0.45) !important;
+  padding: 8px 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+[data-testid="stPopover"] > button:hover,
+div[data-testid="stPopover"] > button:hover {
+  background: linear-gradient(135deg, rgba(139,92,246,0.7) 0%, rgba(6,182,212,0.5) 100%) !important;
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 26px rgba(139,92,246,0.85), 0 0 14px rgba(6,182,212,0.6) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+  color: #ffffff !important;
+}
+[data-testid="stPopoverBody"] {
+  background: rgba(15,15,18,0.95) !important;
+  border: 1px solid rgba(139,92,246,0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8), 0 0 20px rgba(139,92,246,0.25) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
 /* ── §10. FORM ELEMENTS ───────────────────────────────────── */
 div[data-baseweb="select"] { cursor: pointer !important; }
 div[data-baseweb="select"] > div,
