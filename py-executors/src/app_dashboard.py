@@ -424,7 +424,7 @@ st.sidebar.markdown(f"""
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
-    "Navigation Principale",
+    "Main Navigation",
     [
         "🎨 Agentic Pipeline (Spatial Canvas)",
         "🎯 Executive Decision Cockpit",
@@ -446,9 +446,9 @@ menu = st.sidebar.radio(
 
 st.sidebar.markdown("""
 <div style="margin-top:24px;padding:12px;background:rgba(9,9,11,0.8);border:1px solid rgba(39,39,42,0.5);border-radius:10px;font-size:0.73rem;color:#52525b;text-align:center;">
-    <strong style="color:#71717a;">Plateforme v4.0.0</strong><br>
+    <strong style="color:#71717a;">Platform v4.0.0</strong><br>
     Google TabFM · What-If · MCT<br>
-    <span style="color:#10b981;">Certifié EU AI Act Art. 12 & 26</span>
+    <span style="color:#10b981;">EU AI Act Art. 12 & 26 Certified</span>
 </div>
 """, unsafe_allow_html=True)
 
@@ -459,59 +459,59 @@ with col_bl:
     <div style="background:rgba(24,24,27,0.85);border:1px solid rgba(39,39,42,0.6);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;backdrop-filter:blur(12px);">
         <span><span class="dot-live"></span><span style="font-size:0.88rem;color:#f4f4f5;font-weight:700;">Active Agentic Orchestrator</span></span>
         <span style="font-size:0.82rem;color:#71717a;">💬 <b style="color:#c4b5fd;">Copilot Ready</b></span>
-        <span style="font-size:0.82rem;color:#71717a;">🔐 <b style="color:#10b981;">Signé RSA-PSS</b></span>
+        <span style="font-size:0.82rem;color:#71717a;">🔐 <b style="color:#10b981;">RSA-PSS Signed</b></span>
         <span style="font-size:0.82rem;color:#f4f4f5;">Google TabFM</span>
         <span style="font-size:0.82rem;color:#06b6d4;">PAIR What-If</span>
         <span style="font-size:0.82rem;color:#c4b5fd;">⚔️ Red Teamer</span>
     </div>
     """, unsafe_allow_html=True)
 with col_bm:
-    with st.popover("❓ Guide d'Aide & Tour", use_container_width=True):
+    with st.popover("❓ Help & User Guide", use_container_width=True):
         st.markdown("""
-        ### 📖 Guide d'Utilisation & Tour de la Plateforme
+        ### 📖 User Guide & Interactive Platform Tour
 
-        Bienvenue sur **Dataset Automator v4.0** — la première plateforme de MLOps spatial et agentique au monde conçue pour l'entreprise et auditée sous l'**EU AI Act (Articles 12 & 26)** et le **NIST AI RMF** !
-
-        ---
-
-        #### 🚀 1. Déroulement du Workflow en 7 Étapes :
-        1. **🎨 Canvas Spatial (Onglet 1)** :
-           * **Importation** : Glissez-déposez votre propre fichier CSV/Excel ou choisissez un dataset de test.
-           * **Lancement** : Cliquez sur **`▶️ Run Pipeline`** pour voir les nœuds s'animer en 60 FPS avec leurs particules lumineuses.
-           * **Arbitrage Humain (HITL)** : Validez les 4 portes de contrôle (**Gate A** = Domaine, **Gate B** = Feature Engineering, **Gate C** = Stratégie, **Gate D** = Champion).
-           * **Terminal de pensée** : Suivez le flux de délibération de l'agent en direct sous le Canvas.
-           * **Hub de livraison** : Téléchargez directement le Notebook (.ipynb), le Rapport Visuel (.html), la Model Card et le reçu cryptographique dès l'étape 7.
-        
-        2. **🎯 Executive Cockpit (Onglet 2)** :
-           * Diagnostic flash en langage clair pour la direction, calcul des pertes évitées en €/$ et simulateur d'arbitrage de budget marketing.
-        
-        3. **💬 Antigravity Copilot (Onglet 3)** :
-           * Discutez avec votre agent propulsé par **Google Gemini 3.5 Flash / Pro**, **Google TabFM** ou **Gemma 2**.
-           * Déclenchez des actions d'audit en langage naturel via *Function Calling*.
-        
-        4. **🔮 Google PAIR What-If Tool (Onglet 4)** :
-           * Explorez les contrefactuels en modifiant les curseurs pour inverser une décision prédictive défavorable (*Nearest Counterfactual Search*).
-        
-        5. **📑 Google Model Card Toolkit (Onglet 5)** :
-           * Fiche d'identité officielle du modèle champion conforme aux standards Google Research (HTML Material Design & JSON).
-        
-        6. **⚔️ Autonomous Red Team Matrix (Onglet 6)** :
-           * 4 attaques adversariales pré-déploiement (*Target Leakage, Outliers +500%, Bruit gaussien, Biais démographique*).
-        
-        7. **⚡ Routeur Adaptatif & Coûts (Onglet 7)** :
-           * Cascade intelligente réduisant les coûts de tokens de **125×** en routant 80% des requêtes tabulaires vers TabFM.
-        
-        8. **🛡️ Panneau d'Interception Guardrails (Onglet 8)** :
-           * Résolution des alertes statistiques (VIF > 10, Durbin-Watson temporels, surapprentissage).
-        
-        9. **🚀 Agent Flight Recorder (Onglet 9)** :
-           * Boîte noire de conformité : Traces OTLP, Spans, Chain-of-Thought et rejeu chronologique *Time-Travel*.
-        
-        10. **📓 Notebook Explorer & Validateur (Onglet 15)** :
-            * Téléchargez le **Notebook Jupyter de 55 cellules** certifié avec le score forensic **100/100 EXCELLENT** et visualisez le rapport HTML interactif directement dans l'application !
+        Welcome to **Dataset Automator v4.0** — the world's premier spatial & agentic Autonomous MLOps Factory, fully audited under the **EU AI Act (Articles 12 & 26)** and **NIST AI RMF**!
 
         ---
-        💡 *Chaque décision est scellée par signature numérique non-répudiable RSASSA-PSS-SHA256.*
+
+        #### 🚀 1. End-to-End 7-Stage Workflow:
+        1. **🎨 Spatial Canvas (Tab 1)**:
+           * **Ingestion**: Drag & drop your CSV/Excel data or select an enterprise benchmark.
+           * **Execution**: Click **`▶️ Run Pipeline`** to watch real-time GPU flow animations and speculative branching at 60 FPS.
+           * **Human-in-the-Loop (HITL)**: Validate 4 governance checkpoints (**Gate A** = Domain Ontology, **Gate B** = Feature Engineering, **Gate C** = Loss & Strategy, **Gate D** = Champion Promotion).
+           * **Live Thought Stream**: Track step-by-step FastMCP kernel deliberations directly below the canvas.
+           * **Delivery Hub**: 1-click download for Certified 55-Cell Notebook (`.ipynb`), Interactive HTML Report, Google Model Card, and Signed Cryptographic Receipt (`.json`).
+        
+        2. **🎯 Executive Decision Cockpit (Tab 2)**:
+           * Plain-language executive flash diagnosis, financial impact in € / $, and real-time marketing budget ROI simulator.
+        
+        3. **💬 Antigravity Copilot (Tab 3)**:
+           * Natural-language conversational MLOps powered by **Google Gemini 3.5 Flash / Pro**, **Google TabFM**, and **Gemma 2**.
+           * Execute live audits and stress tests via structured *Function Calling*.
+        
+        4. **🔮 Google PAIR What-If Tool (Tab 4)**:
+           * Real-time sensitivity probing and Nearest Counterfactual search to reverse adverse predictions.
+        
+        5. **📑 Google Model Card Toolkit (Tab 5)**:
+           * Official Material Design & JSON Model Cards conforming to Google Research transparency standards.
+        
+        6. **⚔️ Autonomous Red Team Matrix (Tab 6)**:
+           * 4 pre-deployment adversarial attacks (*Target Leakage, Extreme Outliers +500%, Gaussian Noise, Demographic Parity Bias*).
+        
+        7. **⚡ Adaptive Model Router & Costs (Tab 7)**:
+           * Intelligent cascade architecture slashing token inference costs by **125×** by routing tabular queries to TabFM.
+        
+        8. **🛡️ Guardrail Intercept Panel (Tab 8)**:
+           * Auto-remediation for statistical warnings (VIF > 10, Durbin-Watson temporal autocorrelation, Overfitting).
+        
+        9. **🚀 Agent Flight Recorder (Tab 9)**:
+           * Enterprise compliance black box: OpenTelemetry (OTLP) traces, Spans, Chain-of-Thought logs, and Time-Travel replay.
+        
+        10. **📓 Notebook Explorer & Validator (Tab 15)**:
+            * Audit, explore, and download **production-grade 55-cell Jupyter Notebooks** with **100/100 EXCELLENT** forensic score and in-app interactive HTML report viewer.
+
+        ---
+        💡 *Every decision is non-repudiably certified with RSASSA-PSS-SHA256 digital signatures.*
         """)
 with col_br:
     now_str = datetime.datetime.now().strftime("%H:%M:%S")
