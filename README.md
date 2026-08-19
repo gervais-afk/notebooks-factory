@@ -11,7 +11,7 @@
 
 > **Notebooks Factory (Dataset Automator v4.0)** is the world's first **Spatial, Multi-Agent MLOps Control Center**. Engineered for enterprise data science teams and audited under the **EU AI Act (Articles 12 & 26)** and **NIST AI RMF**, it transforms raw enterprise tabular data into fully audited, production-ready machine learning pipelines and certified 55-cell Jupyter notebooks in **60 seconds**.
 >
-> 💡 **Created & architected by [Gervais Marie (magenel85)](https://devpost.com/magenel85)** — *Google Developer Program Member (Gemini Enterprise Agent Ready Badge)*.
+> 💡 **Created & architected by [Gervais Marie (magenel85)](https://devpost.com/magenel85)** — *Google Developer Program Member & Lead AI Engineer*.
 
 ---
 
@@ -196,7 +196,7 @@ cd notebooks-factory
 ## 👨‍💻 Creator & Intellectual Property
 
 * **Creator & Lead AI Engineer**: **KOA MARIE GERVAIS NELLY (Gervais Marie)** ([@gervais-afk](https://github.com/gervais-afk) / [Devpost: magenel85](https://devpost.com/magenel85))
-* **Google Developer Recognition**: **Gemini Enterprise Agent Ready (GEAR) Badge** & **Google Developer Program Member** ([Google Developers Profile](https://me.developers.google.com/u/me)).
+* **Google Affiliation**: **Google Developer Program Member** ([Google Developers Profile](https://me.developers.google.com/u/me)).
 * **Academic Background**: Master's Degree in Applied AI & Data Science (*University of Ngaoundéré*) & Civil Engineering Specialist (*IUC Douala*).
 
 ---
