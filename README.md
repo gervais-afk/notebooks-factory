@@ -96,53 +96,61 @@ graph TD
 * **DuckDB In-Memory OLAP**: High-performance local columnar query engine processing multi-gigabyte tabular datasets in memory with zero API overhead.
 * **Cryptographic Partition Fingerprinting**: SHA-256 hash calculated over every queried data partition for immutable training data lineage.
 
-### 2️⃣ Spatial Execution Canvas (Graph Engineering at 60 FPS)
+### 2️⃣ Neo4j GraphRAG & Ontological Knowledge Framework (OKF v0.2)
+* **Domain-Specific Feature Engineering Ontology**: Implements **117 OKF Cards across 407 Semantic Triples** mapping raw tabular columns to deterministic domain mathematics:
+  * *Telecom & Churn*: ARPU (Average Revenue Per User), Charge Shock Ratio (CSR), Customer Lifetime Value (LTV).
+  * *Finance & Credit Risk*: Debt-to-Income (DTI), Debt Service Coverage Ratio (DSCR), GARCH Volatility.
+  * *Healthcare & Diagnostics*: Body Mass Index (BMI), Mean Arterial Pressure (MAP), Interaction Factors.
+  * *E-Commerce & Retail*: Recency-Frequency-Monetary (RFM) Score, Basket Entropy, Customer Acquisition Elasticity.
+* **Neuro-Symbolic Bridge**: Couples LLM reasoning with deterministic mathematical graph ontologies to eliminate hallucinations in automated feature engineering.
+
+### 3️⃣ Spatial Execution Canvas (Graph Engineering at 60 FPS)
 * **Unified Step Cards**: Aggregates agent roles, foundation model tiers, FastMCP tools, and real-time validation metrics in intuitive spatial cards.
 * **GPU Bezier Flow Animations**: Native SVG particle flows animated at 60 FPS along live data pipelines (`<animateMotion>`).
 * **Faded Pruned Ghost Nodes**: Translucent visualization of pruned or rejected speculative reasoning branches.
 
-### 3️⃣ Google TabFM Foundation Champion & Tournament Arena
+### 4️⃣ Google TabFM Foundation Champion & Tournament Arena
 * **Google TabFM (Tabular Foundation Model)**: Google Research pre-trained tabular foundation model outperforming XGBoost, LightGBM, and CatBoost without overfitting.
 * **Generalization Gap & Overfitting Audit**: Rigorous Train/Test evaluation measuring test set degradation and producing a global robustness score.
 
-### 4️⃣ Google PAIR What-If Tool & Nearest Counterfactual Search
+### 5️⃣ Google PAIR What-If Tool & Nearest Counterfactual Search
 * **Interactive Counterfactual Probing**: Real-time sliders to manipulate sensitive input variables and probe model decision boundaries.
 * **Nearest Counterfactual Optimization**: Computes the minimal actionable change (e.g. `+8% Monthly Revenue`) required to flip an unfavorable predictive classification.
 
-### 5️⃣ Google Model Card Toolkit (MCT)
+### 6️⃣ Google Model Card Toolkit (MCT)
 * **Automated Identity Card Generation**: Generates interactive model cards in **Material Design HTML** and structured **JSON**.
 * **Official Google Research Standard Sections**: Model Details, Intended Use Cases, Quantitative Performance, Training Data Lineage, Ethical Considerations, and Regulatory Disclaimers.
 
-### 6️⃣ Autonomous Adversarial Red Team Matrix
+### 7️⃣ Autonomous Adversarial Red Team Matrix
 * **4-Vector Pre-Deployment Stress Testing**:
   1. *Target Leakage Audit* (Flags suspicious feature correlations > 0.95).
   2. *Extreme Outlier Injection* (+500% anomaly stress test).
   3. *Gaussian Noise Perturbation* (Measures prediction degradation under signal noise).
   4. *Demographic Bias & Fairness Audit* (Disparate impact analysis on protected attributes).
 
-### 7️⃣ Adaptive Model Router & Cost Arbitrage (125× ROI)
+### 8️⃣ Adaptive Model Router & Cost Arbitrage (125× ROI)
 * **Multi-Tier Cascade Routing**:
   * *Tier 1: Google TabFM (22 ms · $0.00001/1k)* $\rightarrow$ 80% of direct tabular inferences.
   * *Tier 2: Local Small Language Model (152 ms)* $\rightarrow$ 15% of schema validations.
   * *Tier 3: Gemini 3.5 Flash (180 ms · $0.0001/1k)* $\rightarrow$ 5% of complex strategic deliberations.
 * **Proven Cost Reduction**: Slashes token inference costs by **125×** compared to monolithic LLM-only pipelines.
 
-### 8️⃣ HITL Guardrail Intercept & Cryptographic Receipts (EU AI Act)
+### 9️⃣ HITL Guardrail Intercept & Cryptographic Receipts (EU AI Act)
 * **Human-in-the-Loop Stop & Intervene Gates**: Side-by-side **SmartDiff** panels for human validation of critical decisions before execution.
 * **Cryptographic Black Box (`RSASSA-PSS-SHA256`)**: Every decision, metric, and model artifact is digitally signed into a tamper-proof JSON receipt conforming to **EU AI Act Articles 12 & 26** and **NIST AI RMF**.
 
-### 9️⃣ Agent Flight Recorder & OTLP Observability
+### 🔟 Agent Flight Recorder & OTLP Observability
 * **4-Tab Deep Telemetry Inspector**:
   * *OTLP Spans* (Tool execution latency waterfall).
   * *Chain-of-Thought* (Step-by-step kernel deliberations).
   * *Raw JSON & Crypto Signatures* (Verifiable compliance records).
   * *Time-Travel Replay* (Chronological replay of past execution runs).
 
-### 🔟 CRISP-ML(Q) 55-Cell Jupyter Notebook Generator & Validator
+### 1️⃣1️⃣ CRISP-ML(Q) 55-Cell Jupyter Notebook Generator & Validator
 * **Automated 55-Cell Production Notebooks** structured across all 14 official CRISP-ML(Q) lifecycle sections.
 * **Automated Forensic Code Audit**: Validates reproducibility, zero data leakage, and code syntax with a perfect **100/100 EXCELLENT** forensic score.
 
-### 1️⃣1️⃣ Antigravity Copilot with Vertex AI Multi-Model Selector
+### 1️⃣2️⃣ Antigravity Copilot with Vertex AI Multi-Model Selector
 * **Natural-Language Conversational MLOps** powered by autonomous *Function Calling*.
 * **Dynamic Google Cloud / Vertex AI Multi-Model Selector**: Seamless switching between **Gemini 3.5 Flash**, **Gemini 3.5 Pro**, **Google TabFM**, and **Gemma 2 27B** with live token cost and latency tracking.
 
