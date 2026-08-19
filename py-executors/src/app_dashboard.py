@@ -2212,13 +2212,14 @@ elif menu == "🔍 Explainability Audit (SHAP)":
 # 11. NEO4J KNOWLEDGE GRAPH
 # =============================================================================
 elif menu == "🕸️ Neo4j Knowledge Graph":
-    st.markdown('<div class="page-header-title">🕸️ Neo4j Knowledge Graph Explorer</div>', unsafe_allow_html=True)
     graph_html_path = WORKSPACE_DIR / "knowledge_graph_view.html"
+    if not graph_html_path.exists():
+        graph_html_path = DATASET_AUTO_DIR / "knowledge_graph_architecture.html"
     if graph_html_path.exists():
         with open(graph_html_path, "r", encoding="utf-8") as f:
-            st.components.v1.html(f.read(), height=700, scrolling=True)
+            st.components.v1.html(f.read(), height=750, scrolling=True)
     else:
-        st.info("Neo4j graph available via the server visualization.")
+        st.info("Neo4j GraphRAG ontology active (117 OKF Cards).")
 
 
 # =============================================================================
