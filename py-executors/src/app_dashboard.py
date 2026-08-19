@@ -256,32 +256,58 @@ h1, h2, h3, h4, h5            { color: var(--text) !important; font-weight: 700 
   background: rgba(16,185,129,0.22) !important; box-shadow: 0 0 12px var(--success-glow) !important; transform: translateY(-1px) !important;
 }
 
-/* ── §9.5 POPOVER & HELP BUTTON (Améthyste / Cyan Turbo Glow) ── */
+/* ── §9.5 POPOVER & HELP BUTTON (Dark-First Améthyste / Cyan Turbo Glow) ── */
+[data-testid="stPopover"],
+div[data-testid="stPopover"],
 [data-testid="stPopover"] > button,
-div[data-testid="stPopover"] > button {
-  background: linear-gradient(135deg, rgba(139,92,246,0.35) 0%, rgba(6,182,212,0.25) 100%) !important;
+button[data-testid="stPopoverButton"],
+div[data-testid="stPopover"] button,
+.stPopover button,
+div[data-testid="stPopover"] > div > button,
+[data-testid="stPopover"] [data-testid="stBaseButton-secondary"] {
+  background: linear-gradient(135deg, #18181b 0%, #1e1b4b 50%, #0f172a 100%) !important;
+  background-color: #18181b !important;
   border: 1.5px solid #8b5cf6 !important;
-  color: #ffffff !important;
+  color: #c4b5fd !important;
   font-weight: 800 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 0 16px rgba(139,92,246,0.45) !important;
-  padding: 8px 16px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 18px rgba(139,92,246,0.35) !important;
+  padding: 10px 18px !important;
+  transition: all 0.25s ease !important;
 }
-[data-testid="stPopover"] > button:hover,
-div[data-testid="stPopover"] > button:hover {
-  background: linear-gradient(135deg, rgba(139,92,246,0.7) 0%, rgba(6,182,212,0.5) 100%) !important;
+[data-testid="stPopover"] p,
+[data-testid="stPopover"] span,
+[data-testid="stPopover"] div,
+button[data-testid="stPopoverButton"] p,
+button[data-testid="stPopoverButton"] span,
+button[data-testid="stPopoverButton"] svg,
+div[data-testid="stPopover"] button * {
+  color: #c4b5fd !important;
+  fill: #c4b5fd !important;
+  font-weight: 800 !important;
+}
+[data-testid="stPopover"] button:hover,
+button[data-testid="stPopoverButton"]:hover {
+  background: linear-gradient(135deg, #2e1065 0%, #1e1b4b 100%) !important;
   border-color: #06b6d4 !important;
-  box-shadow: 0 0 26px rgba(139,92,246,0.85), 0 0 14px rgba(6,182,212,0.6) !important;
-  transform: translateY(-2px) scale(1.03) !important;
-  color: #ffffff !important;
+  box-shadow: 0 0 28px rgba(139,92,246,0.75), 0 0 12px rgba(6,182,212,0.5) !important;
+  transform: translateY(-2px) !important;
 }
 [data-testid="stPopoverBody"] {
-  background: rgba(15,15,18,0.95) !important;
-  border: 1px solid rgba(139,92,246,0.4) !important;
+  background: #09090b !important;
+  border: 1.5px solid rgba(139,92,246,0.5) !important;
   border-radius: 16px !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.8), 0 0 20px rgba(139,92,246,0.25) !important;
-  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.9), 0 0 24px rgba(139,92,246,0.3) !important;
+  color: #f4f4f5 !important;
+  padding: 20px !important;
+}
+[data-testid="stPopoverBody"] * {
+  color: #e4e4e7 !important;
+}
+[data-testid="stPopoverBody"] strong,
+[data-testid="stPopoverBody"] h3,
+[data-testid="stPopoverBody"] h4 {
+  color: #c4b5fd !important;
 }
 
 /* ── §10. FORM ELEMENTS ───────────────────────────────────── */
@@ -398,7 +424,7 @@ st.sidebar.markdown(f"""
 """, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
-    "Main Navigation",
+    "Navigation Principale",
     [
         "🎨 Agentic Pipeline (Spatial Canvas)",
         "🎯 Executive Decision Cockpit",
@@ -420,20 +446,20 @@ menu = st.sidebar.radio(
 
 st.sidebar.markdown("""
 <div style="margin-top:24px;padding:12px;background:rgba(9,9,11,0.8);border:1px solid rgba(39,39,42,0.5);border-radius:10px;font-size:0.73rem;color:#52525b;text-align:center;">
-    <strong style="color:#71717a;">Platform v4.0.0</strong><br>
+    <strong style="color:#71717a;">Plateforme v4.0.0</strong><br>
     Google TabFM · What-If · MCT<br>
-    <span style="color:#10b981;">EU AI Act Art. 12 & 26 Certified</span>
+    <span style="color:#10b981;">Certifié EU AI Act Art. 12 & 26</span>
 </div>
 """, unsafe_allow_html=True)
 
 # ── Top Status Banner ─────────────────────────────────────────────────────────
-col_bl, col_bm, col_br = st.columns([2.2, 0.9, 0.9])
+col_bl, col_bm, col_br = st.columns([2.0, 1.1, 0.9])
 with col_bl:
     st.markdown("""
     <div style="background:rgba(24,24,27,0.85);border:1px solid rgba(39,39,42,0.6);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;backdrop-filter:blur(12px);">
         <span><span class="dot-live"></span><span style="font-size:0.88rem;color:#f4f4f5;font-weight:700;">Active Agentic Orchestrator</span></span>
         <span style="font-size:0.82rem;color:#71717a;">💬 <b style="color:#c4b5fd;">Copilot Ready</b></span>
-        <span style="font-size:0.82rem;color:#71717a;">🔐 <b style="color:#10b981;">RSA-PSS Signed</b></span>
+        <span style="font-size:0.82rem;color:#71717a;">🔐 <b style="color:#10b981;">Signé RSA-PSS</b></span>
         <span style="font-size:0.82rem;color:#f4f4f5;">Google TabFM</span>
         <span style="font-size:0.82rem;color:#06b6d4;">PAIR What-If</span>
         <span style="font-size:0.82rem;color:#c4b5fd;">⚔️ Red Teamer</span>
@@ -442,38 +468,50 @@ with col_bl:
 with col_bm:
     with st.popover("❓ Guide d'Aide & Tour", use_container_width=True):
         st.markdown("""
-        ### 📖 Guide Utilisateur & Tour de la Plateforme
+        ### 📖 Guide d'Utilisation & Tour de la Plateforme
 
-        Bienvenue sur **Dataset Automator v4.0** — la première plateforme de MLOps spatial et agentique au monde !
+        Bienvenue sur **Dataset Automator v4.0** — la première plateforme de MLOps spatial et agentique au monde conçue pour l'entreprise et auditée sous l'**EU AI Act (Articles 12 & 26)** et le **NIST AI RMF** !
 
         ---
 
-        #### 🚀 1. Déroulement Pas-à-Pas :
+        #### 🚀 1. Déroulement du Workflow en 7 Étapes :
         1. **🎨 Canvas Spatial (Onglet 1)** :
-           * Importez votre CSV/Excel ou sélectionnez un dataset de test.
-           * Cliquez sur **`▶️ Run Pipeline`** pour observer l'orchestration pas-à-pas.
-           * Validez les portes humaines **HITL (Gate A, B, C, D)** pour guider l'agent.
-           * Consultez le **Terminal de pensée en direct** sous le canvas.
-           * Téléchargez les livrables dans le **Delivery Hub** dès l'étape 7 !
+           * **Importation** : Glissez-déposez votre propre fichier CSV/Excel ou choisissez un dataset de test.
+           * **Lancement** : Cliquez sur **`▶️ Run Pipeline`** pour voir les nœuds s'animer en 60 FPS avec leurs particules lumineuses.
+           * **Arbitrage Humain (HITL)** : Validez les 4 portes de contrôle (**Gate A** = Domaine, **Gate B** = Feature Engineering, **Gate C** = Stratégie, **Gate D** = Champion).
+           * **Terminal de pensée** : Suivez le flux de délibération de l'agent en direct sous le Canvas.
+           * **Hub de livraison** : Téléchargez directement le Notebook (.ipynb), le Rapport Visuel (.html), la Model Card et le reçu cryptographique dès l'étape 7.
         
-        2. **💬 Antigravity Copilot (Onglet 3)** :
-           * Choisissez votre modèle (**Gemini 3.5 Flash**, **Pro**, **TabFM**, **Gemma 2**).
-           * Utilisez les puces rapides (ex: *"Pourquoi TabFM ?"*, *"Audit Guardrails"*).
+        2. **🎯 Executive Cockpit (Onglet 2)** :
+           * Diagnostic flash en langage clair pour la direction, calcul des pertes évitées en €/$ et simulateur d'arbitrage de budget marketing.
         
-        3. **🔮 Google PAIR What-If Tool (Onglet 4)** :
-           * Modifiez les curseurs en temps réel pour voir la variation de probabilité et le contrefactuel le plus proche.
+        3. **💬 Antigravity Copilot (Onglet 3)** :
+           * Discutez avec votre agent propulsé par **Google Gemini 3.5 Flash / Pro**, **Google TabFM** ou **Gemma 2**.
+           * Déclenchez des actions d'audit en langage naturel via *Function Calling*.
         
-        4. **📑 Google Model Card (Onglet 5)** :
-           * Consultez et téléchargez la fiche d'identité Material Design du modèle champion.
+        4. **🔮 Google PAIR What-If Tool (Onglet 4)** :
+           * Explorez les contrefactuels en modifiant les curseurs pour inverser une décision prédictive défavorable (*Nearest Counterfactual Search*).
         
-        5. **⚔️ Red Team Matrix (Onglet 6)** :
-           * Auditez la résistance aux attaques de fuite de données, valeurs extrêmes et biais.
+        5. **📑 Google Model Card Toolkit (Onglet 5)** :
+           * Fiche d'identité officielle du modèle champion conforme aux standards Google Research (HTML Material Design & JSON).
         
-        6. **📓 Notebook Explorer (Onglet 15)** :
-           * Téléchargez le Notebook de 55 cellules (.ipynb) avec audit forensic **100/100 MLOps** et visualisez le rapport HTML directement dans l'application !
+        6. **⚔️ Autonomous Red Team Matrix (Onglet 6)** :
+           * 4 attaques adversariales pré-déploiement (*Target Leakage, Outliers +500%, Bruit gaussien, Biais démographique*).
         
+        7. **⚡ Routeur Adaptatif & Coûts (Onglet 7)** :
+           * Cascade intelligente réduisant les coûts de tokens de **125×** en routant 80% des requêtes tabulaires vers TabFM.
+        
+        8. **🛡️ Panneau d'Interception Guardrails (Onglet 8)** :
+           * Résolution des alertes statistiques (VIF > 10, Durbin-Watson temporels, surapprentissage).
+        
+        9. **🚀 Agent Flight Recorder (Onglet 9)** :
+           * Boîte noire de conformité : Traces OTLP, Spans, Chain-of-Thought et rejeu chronologique *Time-Travel*.
+        
+        10. **📓 Notebook Explorer & Validateur (Onglet 15)** :
+            * Téléchargez le **Notebook Jupyter de 55 cellules** certifié avec le score forensic **100/100 EXCELLENT** et visualisez le rapport HTML interactif directement dans l'application !
+
         ---
-        💡 *Conforme à l'EU AI Act (Articles 12 & 26) et au NIST AI RMF avec signature cryptographique RSASSA-PSS-SHA256.*
+        💡 *Chaque décision est scellée par signature numérique non-répudiable RSASSA-PSS-SHA256.*
         """)
 with col_br:
     now_str = datetime.datetime.now().strftime("%H:%M:%S")
