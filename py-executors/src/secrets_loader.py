@@ -70,10 +70,11 @@ def get_openrouter_site() -> tuple[str, str]:
 # § 2.  Gemini Caller
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _call_gemini(prompt: str, model_name: str = "gemini-2.0-flash") -> str:
+def _call_gemini(prompt: str, model_name: str = "gemini-2.5-flash") -> str:
     """
     Call Google Gemini via google-generativeai SDK.
-    Raises RuntimeError if key is missing or call fails.
+    Tries requested model, then falls back to gemini-1.5-flash / gemini-2.5-flash-latest.
+    Raises RuntimeError if key is missing or all Gemini models fail.
     """
     key = get_gemini_key()
     if not key:
@@ -82,9 +83,24 @@ def _call_gemini(prompt: str, model_name: str = "gemini-2.0-flash") -> str:
     import google.generativeai as genai
     genai.configure(api_key=key)
 
-    model = genai.GenerativeModel(model_name)
-    response = model.generate_content(prompt)
-    return response.text
+    candidate_models = [model_name, "gemini-2.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    seen = set()
+    last_err = None
+
+    for m_name in candidate_models:
+        if m_name in seen:
+            continue
+        seen.add(m_name)
+        try:
+            model = genai.GenerativeModel(m_name)
+            response = model.generate_content(prompt)
+            if response and response.text:
+                return response.text
+        except Exception as e:
+            last_err = e
+            continue
+
+    raise RuntimeError(f"All Gemini models failed. Last error: {last_err}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
