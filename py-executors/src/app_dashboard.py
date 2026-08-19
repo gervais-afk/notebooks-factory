@@ -562,7 +562,12 @@ if menu == "🎨 Agentic Pipeline (Spatial Canvas)":
     # 🏷️ DYNAMIC BUSINESS DOMAIN DETECTION
     ds_name = st.session_state.get("current_dataset_name", "clients.csv").lower()
     risk_score = 65  # Default risk score baseline
-    if "client" in ds_name or "telecom" in ds_name:
+    if "btc" in ds_name or "crypto" in ds_name or "bitcoin" in ds_name or "usd" in ds_name:
+        detected_domain = "💰 Finance & Crypto Time-Series"
+        domain_badge_color = "#fbbf24"
+        okf_formulas = "Log-Returns, Volatility (GARCH), Momentum RSI, Yeo-Johnson"
+        risk_score = 68
+    elif "client" in ds_name or "telecom" in ds_name or "churn" in ds_name:
         detected_domain = "📞 Telecom & Churn Prediction"
         domain_badge_color = "#06b6d4"
         okf_formulas = "ARPU, Charge Shock Ratio (CSR), Customer Lifetime Value (LTV)"
@@ -572,7 +577,7 @@ if menu == "🎨 Agentic Pipeline (Spatial Canvas)":
         domain_badge_color = "#fbbf24"
         okf_formulas = "Debt-to-Income (DTI), Credit Utilization, DSCR Ratio"
         risk_score = 68
-    elif "diabet" in ds_name or "wdbc" in ds_name or "obesity" in ds_name:
+    elif "diabet" in ds_name or "wdbc" in ds_name or "obesity" in ds_name or "health" in ds_name:
         detected_domain = "🏥 Healthcare & Biomedical Diagnostics"
         domain_badge_color = "#34d399"
         okf_formulas = "Body Mass Index (BMI), Mean Arterial Pressure (MAP)"
