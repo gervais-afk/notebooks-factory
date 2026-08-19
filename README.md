@@ -198,6 +198,7 @@ cd notebooks-factory
 * **Creator & Lead AI Engineer**: **KOA MARIE GERVAIS NELLY (Gervais Marie)** ([@gervais-afk](https://github.com/gervais-afk) / [Devpost: magenel85](https://devpost.com/magenel85))
 * **Google Affiliation**: **Google Developer Program Member** ([Google Developers Profile](https://me.developers.google.com/u/me)).
 * **Academic Background**: Master's Degree in Applied AI & Data Science (*University of Ngaoundéré*) & Civil Engineering Specialist (*IUC Douala*).
+* **Professional Profiles**: [LinkedIn Profile](https://www.linkedin.com/in/marie-gervais-koa) · [GitHub Portfolio](https://github.com/gervais-afk)
 
 ---
 
