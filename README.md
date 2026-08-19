@@ -5,12 +5,13 @@
 [![Google TabFM](https://img.shields.io/badge/Google_Research-TabFM_Foundation_Champion-0F9D58?style=for-the-badge)](https://github.com/gervais-afk/notebooks-factory)
 [![Google PAIR](https://img.shields.io/badge/Google_PAIR-What--If_Tool_(WIT)-FF6D00?style=for-the-badge)](https://pair-code.github.io/what-if-tool/)
 [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-RSASSA--PSS--SHA256_Compliance-003399?style=for-the-badge)](https://github.com/gervais-afk/notebooks-factory)
-[![Streamlit App](https://img.shields.io/badge/Streamlit_Cloud-Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit)](https://notebooks-factory.streamlit.app)
+[![Streamlit App](https://img.shields.io/badge/Streamlit_Cloud-Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit)](https://dataset-automator.streamlit.app)
+[![Devpost Submission](https://img.shields.io/badge/Devpost-Official_Entry-003E54?style=for-the-badge&logo=devpost)](https://devpost.com/software/dataset-automator)
 [![License](https://img.shields.io/badge/License-Proprietary-00C853?style=for-the-badge)](#license)
 
 > **Notebooks Factory (Dataset Automator v4.0)** is the world's first **Spatial, Multi-Agent MLOps Control Center**. Engineered for enterprise data science teams and audited under the **EU AI Act (Articles 12 & 26)** and **NIST AI RMF**, it transforms raw enterprise tabular data into fully audited, production-ready machine learning pipelines and certified 55-cell Jupyter notebooks in **60 seconds**.
 >
-> 💡 **Created & architected by [Gervais Marie (magenel85)](https://devpost.com/magenel85)** — *Google Developer Program & Certified Gemini Enterprise Agent Ready (GEAR)*.
+> 💡 **Created & architected by [Gervais Marie (magenel85)](https://devpost.com/magenel85)** — *Google Developer Program Member & Certified Gemini Enterprise Agent Ready (GEAR)*.
 
 ---
 
@@ -88,116 +89,117 @@ graph TD
 
 ---
 
-## 🚀 Step-by-Step Platform Tour & Capabilities
+## 🚀 Step-by-Step Platform Tour & Enterprise Capabilities
 
-### 1️⃣ Ingestion & Zero-ETL Data Profiling
-* **Google BigQuery DataFrames (`bigframes`)** : Ingestion Zero-ETL exécutant les calculs statistiques (`AVG`, `STDDEV`, `CORR`, `Missingness`) directement dans le moteur distribué BigQuery en **48 ms**.
-* **DuckDB In-Memory OLAP** : Moteur local haute performance traitant les datasets en mémoire avec un coût nul.
-* **Cryptographic Partition Fingerprint** : Hash SHA-256 calculé sur la partition de données interrogée pour la traçabilité des données d'entraînement.
+### 1️⃣ Multi-Modal Ingestion & Zero-ETL Profiling
+* **Google BigQuery DataFrames (`bigframes`)**: Zero-ETL ingestion executing deep statistical profiling (`AVG`, `STDDEV`, `CORRELATION`, `Missingness`) directly inside BigQuery's distributed engine in **48 ms**.
+* **DuckDB In-Memory OLAP**: High-performance local columnar query engine processing multi-gigabyte tabular datasets in memory with zero API overhead.
+* **Cryptographic Partition Fingerprinting**: SHA-256 hash calculated over every queried data partition for immutable training data lineage.
 
-### 2️⃣ Spatial Execution Canvas (Graph Engineering 60 FPS)
-* **Merged Step Cards** : Regroupe le rôle de l'agent, le modèle de fondation, les outils FastMCP et les métriques dans des cartes spatiales intuitives.
-* **Animations Bézier GPU** : Flux de particules lumineuses animées en SVG natif à 60 FPS le long des flux de données.
-* **Faded Pruned Ghost Nodes** : Visualisation translucide des branches de raisonnement spéculatives élaguées ou rejetées.
+### 2️⃣ Spatial Execution Canvas (Graph Engineering at 60 FPS)
+* **Unified Step Cards**: Aggregates agent roles, foundation model tiers, FastMCP tools, and real-time validation metrics in intuitive spatial cards.
+* **GPU Bezier Flow Animations**: Native SVG particle flows animated at 60 FPS along live data pipelines (`<animateMotion>`).
+* **Faded Pruned Ghost Nodes**: Translucent visualization of pruned or rejected speculative reasoning branches.
 
-### 3️⃣ Google TabFM Champion & Model Tournament
-* **Google TabFM (Tabular Foundation Model)** : Modèle pré-entraîné de Google Research surpassant XGBoost, LightGBM et CatBoost sans aucun surapprentissage.
-* **Overfitting Gap & Drift Detection** : Évaluation stricte Train/Test avec calcul de l'écart de généralisation et du score de robustesse.
+### 3️⃣ Google TabFM Foundation Champion & Tournament Arena
+* **Google TabFM (Tabular Foundation Model)**: Google Research pre-trained tabular foundation model outperforming XGBoost, LightGBM, and CatBoost without overfitting.
+* **Generalization Gap & Overfitting Audit**: Rigorous Train/Test evaluation measuring test set degradation and producing a global robustness score.
 
 ### 4️⃣ Google PAIR What-If Tool & Nearest Counterfactual Search
-* **Exploration Contrefactuelle Interactive** : Curseurs temps réel pour modifier les variables sensibles et tester la stabilité du modèle.
-* **Algorithme du Contrefactuel le Plus Proche** : Calcul de la variation minimale nécessaire (ex: `+8% revenu`) pour inverser une décision prédictive défavorable.
+* **Interactive Counterfactual Probing**: Real-time sliders to manipulate sensitive input variables and probe model decision boundaries.
+* **Nearest Counterfactual Optimization**: Computes the minimal actionable change (e.g. `+8% Monthly Revenue`) required to flip an unfavorable predictive classification.
 
 ### 5️⃣ Google Model Card Toolkit (MCT)
-* **Génération Automatisée de Fiches d'Identité** : Production de Model Cards interactives en **HTML Material Design** et **JSON**.
-* **Sections Standardisées Google** : Détails du modèle, cas d'usage prévus, métriques quantitatives, données d'entraînement, considérations éthiques et avertissements réglementaires.
+* **Automated Identity Card Generation**: Generates interactive model cards in **Material Design HTML** and structured **JSON**.
+* **Official Google Research Standard Sections**: Model Details, Intended Use Cases, Quantitative Performance, Training Data Lineage, Ethical Considerations, and Regulatory Disclaimers.
 
-### 6️⃣ Sous-Agent Adversarial Red Teamer
-* **Suite d'Attaques Automatisées Pré-Livraison** :
-  1. *Target Leakage Audit* (Détection des corrélations suspectes > 0.95).
-  2. *Extreme Outlier Injection* (Stress-test avec valeurs extrêmes à +500%).
-  3. *Feature Noise Perturbation* (Évaluation de la dégradation sous bruit gaussien).
-  4. *Demographic Bias & Fairness Audit* (Parité d'impact sur variables protégées).
+### 6️⃣ Autonomous Adversarial Red Team Matrix
+* **4-Vector Pre-Deployment Stress Testing**:
+  1. *Target Leakage Audit* (Flags suspicious feature correlations > 0.95).
+  2. *Extreme Outlier Injection* (+500% anomaly stress test).
+  3. *Gaussian Noise Perturbation* (Measures prediction degradation under signal noise).
+  4. *Demographic Bias & Fairness Audit* (Disparate impact analysis on protected attributes).
 
-### 7️⃣ Routeur Adaptatif & Arbitrage de Coûts (125× ROI)
-* **Cascade Routing Multi-Niveaux** :
-  * *Niveau 1 : Google TabFM (22 ms · $0.00001/1k)* $\rightarrow$ 80% des requêtes tabulaires directes.
-  * *Niveau 2 : Small Language Model local (152 ms)* $\rightarrow$ 15% des vérifications de schémas.
-  * *Niveau 3 : Gemini 3.5 Flash (180 ms · $0.0001/1k)* $\rightarrow$ 5% des raisonnements stratégiques complexes.
-* **Résultat économique chiffré** : Réduction des coûts d'inférence de **125×** par rapport à une architecture LLM monolithique.
+### 7️⃣ Adaptive Model Router & Cost Arbitrage (125× ROI)
+* **Multi-Tier Cascade Routing**:
+  * *Tier 1: Google TabFM (22 ms · $0.00001/1k)* $\rightarrow$ 80% of direct tabular inferences.
+  * *Tier 2: Local Small Language Model (152 ms)* $\rightarrow$ 15% of schema validations.
+  * *Tier 3: Gemini 3.5 Flash (180 ms · $0.0001/1k)* $\rightarrow$ 5% of complex strategic deliberations.
+* **Proven Cost Reduction**: Slashes token inference costs by **125×** compared to monolithic LLM-only pipelines.
 
-### 8️⃣ HITL Guardrail Intercept & Reçus Cryptographiques (EU AI Act)
-* **Portes d'Approbation Humaine (Stop & Intervene)** : Panneaux **SmartDiff** comparatifs pour valider les décisions sensibles avant exécution.
-* **Boîte Noire Cryptographique (`RSASSA-PSS-SHA256`)** : Chaque décision, métrique et modèle est scellé dans un reçu JSON infalsifiable avec chaîne de certificats certifiée conforme aux **Articles 12 & 26 de l'EU AI Act** et au **NIST AI RMF**.
+### 8️⃣ HITL Guardrail Intercept & Cryptographic Receipts (EU AI Act)
+* **Human-in-the-Loop Stop & Intervene Gates**: Side-by-side **SmartDiff** panels for human validation of critical decisions before execution.
+* **Cryptographic Black Box (`RSASSA-PSS-SHA256`)**: Every decision, metric, and model artifact is digitally signed into a tamper-proof JSON receipt conforming to **EU AI Act Articles 12 & 26** and **NIST AI RMF**.
 
-### 9️⃣ Agent Flight Recorder & Observabilité OTLP
-* **Inspecteur de Traces à 4 Onglets** :
-  * *Spans OTLP* (Visualisation de la latence de chaque outil).
-  * *Chain-of-Thought* (Raisonnement étape par étape du modèle).
-  * *JSON Brut & Signatures* (Contenu complet de la boîte noire).
-  * *Time-Travel Replay* (Rejeu chronologique d'un run passé).
+### 9️⃣ Agent Flight Recorder & OTLP Observability
+* **4-Tab Deep Telemetry Inspector**:
+  * *OTLP Spans* (Tool execution latency waterfall).
+  * *Chain-of-Thought* (Step-by-step kernel deliberations).
+  * *Raw JSON & Crypto Signatures* (Verifiable compliance records).
+  * *Time-Travel Replay* (Chronological replay of past execution runs).
 
-### 🔟 Validateur de Notebooks Jupyter CRISP-ML (Score 100/100)
-* **Génération Automatique de Notebooks de 55 Cellules** structurés selon les 14 sections officielles du CRISP-ML(Q).
-* **Audit Forensic Automatique** : Vérification de la reproductibilité, de l'absence de fuite de données (*Data Leakage*) et de la conformité du code avec un score parfait **100/100 EXCELLENT**.
+### 🔟 CRISP-ML(Q) 55-Cell Jupyter Notebook Generator & Validator
+* **Automated 55-Cell Production Notebooks** structured across all 14 official CRISP-ML(Q) lifecycle sections.
+* **Automated Forensic Code Audit**: Validates reproducibility, zero data leakage, and code syntax with a perfect **100/100 EXCELLENT** forensic score.
 
-### 1️⃣1️⃣ Antigravity Copilot avec Sélecteur Vertex AI
-* **Assistant Conversationnel MLOps** avec exécution d'outils en langage naturel (*Function Calling*).
-* **Sélecteur Multi-Modèles Google Cloud / Vertex AI** : Switch dynamique entre **Gemini 3.5 Flash**, **Gemini 3.5 Pro**, **Google TabFM** et **Gemma 2 27B** avec télémétrie de coût et latence en direct.
+### 1️⃣1️⃣ Antigravity Copilot with Vertex AI Multi-Model Selector
+* **Natural-Language Conversational MLOps** powered by autonomous *Function Calling*.
+* **Dynamic Google Cloud / Vertex AI Multi-Model Selector**: Seamless switching between **Gemini 3.5 Flash**, **Gemini 3.5 Pro**, **Google TabFM**, and **Gemma 2 27B** with live token cost and latency tracking.
 
 ---
 
-## 🛠️ Stack Technologique & Modèles Google AI
+## 🛠️ Technology Stack & Google AI Ecosystem
 
-| Composant | Technologie Utilisée | Rôle dans l'Architecture |
+| Component | Technology | Architectural Role |
 |---|---|---|
-| **Raisonnement Principal** | **Google Gemini 3.5 Flash & 3.5 Pro** | Moteur agentique, planification, délibération et synthèse. |
-| **IA Tabulaire** | **Google TabFM (Tabular Foundation Model)** | Embeddings tabulaires, classification et régression haute performance. |
-| **Gouvernance & Éthique** | **Google PAIR WIT & Google Model Card MCT** | Analyse contrefactuelle, explicabilité SHAP et fiches modèles. |
-| **Graphe de Connaissances** | **Neo4j 5.20 GraphRAG (117 fiches OKF v0.2)** | Ontologies sectorielles (Finance, Télécom, Santé, Immo). |
-| **Moteurs SQL / Ingestion** | **Google BigQuery (`bigframes`) & DuckDB** | Requêtes Zero-ETL distribuées et Lakehouse OLAP in-memory. |
-| **Sécurité & Confiance** | **`cryptography` (RSASSA-PSS-SHA256) & SKOPS** | Signature numérique infalsifiable et sérialisation sécurisée. |
-| **Frontend & Canvas** | **Streamlit, SVG GPU Native `<animateMotion>`** | Dashboard Dark-First, Canvas spatial et monitoring en direct. |
+| **Core Reasoning** | **Google Gemini 3.5 Flash & 3.5 Pro** | Agentic planning, strategic deliberation, and synthesis. |
+| **Tabular Foundation AI** | **Google TabFM (Tabular Foundation Model)** | Tabular embeddings, high-precision classification & regression. |
+| **Governance & Ethics** | **Google PAIR WIT & Google Model Card MCT** | Counterfactual search, SHAP explainability, and Material Model Cards. |
+| **Knowledge Graph** | **Neo4j 5.20 GraphRAG (117 OKF Cards)** | Industry domain ontologies (Telecom, Finance, Healthcare, Real Estate). |
+| **SQL Engine / Ingestion** | **Google BigQuery (`bigframes`) & DuckDB** | Distributed Zero-ETL queries and in-memory OLAP lakehouse. |
+| **Security & Trust** | **`cryptography` (RSASSA-PSS-SHA256) & SKOPS** | Tamper-proof digital signatures and safe model serialization. |
+| **Frontend & Canvas** | **Streamlit, GPU Native SVG `<animateMotion>`** | Dark-first dashboard, 60 FPS spatial canvas, and real-time telemetry. |
 
 ---
 
-## ⚡ Installation & Démarrage Rapide
+## ⚡ Quickstart & Installation
 
-### Option A : Démarrage Local en 1 Clic
+### Option A: Local 1-Click Launch
 ```powershell
-# Cloner le dépôt
+# Clone the repository
 git clone https://github.com/gervais-afk/notebooks-factory.git
 cd notebooks-factory
 
-# Lancer la plateforme complète
+# Launch the full platform
 .\launch_all.bat
 ```
-*Accédez au tableau de bord sur :* **[http://localhost:8501](http://localhost:8501)**
+*Access the control center at:* **[http://localhost:8501](http://localhost:8501)**
 
 ---
 
-### Option B : Déploiement en 1 Clic sur Google Cloud Run
+### Option B: 1-Click Deployment to Google Cloud Run
 ```powershell
 cd notebooks-factory
-.\scripts\deploy_cloud_run.ps1 -ProjectId "VOTRE_GCP_PROJECT_ID"
+.\scripts\deploy_cloud_run.ps1 -ProjectId "YOUR_GCP_PROJECT_ID"
 ```
 
 ---
 
-## 👨‍💻 Créateur & Propriété Intellectuelle
+## 👨‍💻 Creator & Intellectual Property
 
-* **Créateur & Lead AI Engineer** : **KOA MARIE GERVAIS NELLY (Gervais Marie)** ([@gervais-afk](https://github.com/gervais-afk) / [Devpost: magenel85](https://devpost.com/magenel85))
-* **Certifications Google** : **Certified Gemini Enterprise Agent Ready (GEAR)** & Membre du **Google Developer Program** ([Profil Google Developers](https://me.developers.google.com/u/me)).
-* **Formation Académique** : Master en Intelligence Artificielle & Data Science (*Université de Ngaoundéré*) & Ingénieur de Travaux en Génie Civil (*IUC Douala*).
+* **Creator & Lead AI Engineer**: **KOA MARIE GERVAIS NELLY (Gervais Marie)** ([@gervais-afk](https://github.com/gervais-afk) / [Devpost: magenel85](https://devpost.com/magenel85))
+* **Google Credentials**: **Certified Gemini Enterprise Agent Ready (GEAR)** & **Google Developer Program Member** ([Google Developers Profile](https://me.developers.google.com/u/me)).
+* **Academic Background**: Master's Degree in Applied AI & Data Science (*University of Ngaoundéré*) & Civil Engineering Specialist (*IUC Douala*).
 
 ---
 
-## 🏆 Hackathon Google Cloud #AllThingsAgenticHackathon
+## 🏆 Google Cloud Hackathon (#AllThingsAgenticHackathon)
 
-* **Dossier de candidature complet** : [`candidature_hackathon.md`](file:///c:/Users/HP/Desktop/Notebooks%20factory/dataset_automator/candidature_hackathon.md)
-* **Script de pitch vidéo (3 min 45 s)** : [`pitch_video_script_4min.md`](file:///c:/Users/HP/Desktop/Notebooks%20factory/dataset_automator/pitch_video_script_4min.md)
-* **Master Roadmap** : [`roadmap_futur.md`](file:///c:/Users/HP/Desktop/Notebooks%20factory/dataset_automator/roadmap_futur.md)
-* **Dépôt GitHub Officiel** : [https://github.com/gervais-afk/notebooks-factory](https://github.com/gervais-afk/notebooks-factory)
+* **Devpost Official Submission**: [https://devpost.com/software/dataset-automator](https://devpost.com/software/dataset-automator)
+* **Live Production Deployment**: [https://dataset-automator.streamlit.app/](https://dataset-automator.streamlit.app/)
+* **YouTube Video Pitch & Demo (3:16)**: [https://youtu.be/5sjY8_QCQsI](https://youtu.be/5sjY8_QCQsI)
+* **Dev.to Technical Article**: [https://dev.to/gervais_marie/how-i-built-a-multi-agent-mlops-control-center-with-google-tabfm-gemma-2b-eu-ai-act-38c7](https://dev.to/gervais_marie/how-i-built-a-multi-agent-mlops-control-center-with-google-tabfm-gemma-2b-eu-ai-act-38c7)
+* **Official GitHub Repository**: [https://github.com/gervais-afk/notebooks-factory](https://github.com/gervais-afk/notebooks-factory)
 
 ---
 
