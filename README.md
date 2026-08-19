@@ -16,45 +16,53 @@
 
 ## 🌟 Master Technical Architecture & Data Lineage
 
+<div align="center">
+  <img src="architecture_diagram.jpg" alt="Dataset Automator Master 6-Layer Architecture" width="100%" />
+</div>
+
+<details open>
+<summary><b>📐 Interactive Architecture & Component Flowchart</b></summary>
+<br>
+
 ```mermaid
 flowchart TD
-    subgraph Ingestion ["📥 1. Multi-Modal Enterprise Ingestion"]
-        BQ["🏛️ Google BigQuery Zero-ETL (bigframes 48ms)"]
-        DuckDB["🦆 DuckDB Local Lakehouse (In-memory OLAP)"]
-        CSVData["📊 Tabular CSV & Excel (Telecom, Finance, Health)"]
+    subgraph Ingestion ["1. Ingestion"]
+        BQ["Google BigQuery Zero-ETL (bigframes)"]
+        DuckDB["DuckDB Lakehouse (In-memory OLAP)"]
+        CSVData["Tabular Data (CSV & Excel)"]
     end
 
-    subgraph Memory ["🕸️ 2. Domain Ontological GraphRAG & Memory"]
-        Neo4j["🕸️ Neo4j 5.20 GraphRAG (117 OKF Cards / 407 Triples)"]
-        ContextMem["🗄️ Multi-Tier SQLite Memory (TTL Decay & Offload)"]
+    subgraph Memory ["2. GraphRAG & Memory"]
+        Neo4j["Neo4j 5.20 GraphRAG (117 OKF Cards)"]
+        ContextMem["Multi-Tier SQLite Memory (TTL Decay)"]
     end
 
-    subgraph Reasoning ["🧠 3. Agentic Orchestration & Reasoning"]
-        GeminiFlash["⚡ Google Gemini 3.5 Flash (Sub-second Reasoning)"]
-        GeminiPro["🧠 Google Gemini 3.5 Pro (Deep Deliberation)"]
-        AdaptiveRouter["🔀 Adaptive Model Router (125x Cost Reduction)"]
-        LoopBreaker["🛑 Agent Loop Breaker (SHA-256 & Jaccard Intercept)"]
+    subgraph Reasoning ["3. Orchestration & Reasoning"]
+        GeminiFlash["Google Gemini 3.5 Flash"]
+        GeminiPro["Google Gemini 3.5 Pro"]
+        AdaptiveRouter["Adaptive Model Router (125x Cost Arbitrage)"]
+        LoopBreaker["Agent Loop Breaker (SHA-256 & Jaccard)"]
     end
 
-    subgraph Arena ["🏆 4. Foundation Arena & Governance Suite"]
-        TabFM["🌟 Google TabFM Foundation Champion"]
-        XGB["🌲 Boosted Tree Benchmarks (XGBoost, LightGBM, CatBoost)"]
-        WhatIf["🔮 Google PAIR What-If Tool (Sensitivity & Counterfactuals)"]
-        ModelCard["📑 Google Model Card Toolkit (Material HTML & JSON)"]
-        RedTeam["⚔️ Autonomous Red Teamer (4 Attack Vectors)"]
+    subgraph Arena ["4. Foundation Arena & Governance"]
+        TabFM["Google TabFM Foundation Champion"]
+        XGB["Boosted Tree Benchmarks (XGBoost, LightGBM)"]
+        WhatIf["Google PAIR What-If Tool (Counterfactuals)"]
+        ModelCard["Google Model Card Toolkit (Material HTML)"]
+        RedTeam["Autonomous Red Teamer (4 Attack Vectors)"]
     end
 
-    subgraph Governance ["🔐 5. Cryptographic Attestation & HITL Supervision"]
-        HITL["⛩️ HITL Stop & Intervene Gates (SmartDiff Preview)"]
-        CryptoEngine["🔐 EU AI Act Attestation Engine (RSASSA-PSS-SHA256)"]
-        FlightRecorder["🚀 Agent Flight Recorder (OTLP Spans & Time-Travel)"]
+    subgraph Governance ["5. Attestation & HITL"]
+        HITL["HITL Stop & Intervene Gates"]
+        CryptoEngine["EU AI Act Attestation (RSASSA-PSS-SHA256)"]
+        FlightRecorder["Agent Flight Recorder (OTLP Spans)"]
     end
 
-    subgraph Deliverables ["📦 6. Enterprise Production Deliverables"]
-        CanvasUI["🎨 Spatial SVG Execution Canvas (60 FPS)"]
-        CopilotChat["💬 Antigravity Copilot (Vertex AI Multi-Model)"]
-        Notebook55["📓 Certified Jupyter Notebook (55 Cells / 100% Score)"]
-        VisualReport["📊 Standalone MLOps HTML Report"]
+    subgraph Deliverables ["6. Production Deliverables"]
+        CanvasUI["Spatial SVG Execution Canvas (60 FPS)"]
+        CopilotChat["Antigravity Copilot (Vertex AI Multi-Model)"]
+        Notebook55["Certified Jupyter Notebook (55 Cells / 100%)"]
+        VisualReport["Standalone MLOps HTML Report"]
     end
 
     CSVData --> Neo4j
@@ -74,6 +82,7 @@ flowchart TD
     FlightRecorder --> VisualReport
     LoopBreaker --> CopilotChat
 ```
+</details>
 
 ---
 
