@@ -399,24 +399,60 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Top Status Banner ─────────────────────────────────────────────────────────
-col_bl, col_br = st.columns([3, 1])
+col_bl, col_bm, col_br = st.columns([2.2, 0.9, 0.9])
 with col_bl:
     st.markdown("""
     <div style="background:rgba(24,24,27,0.85);border:1px solid rgba(39,39,42,0.6);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;backdrop-filter:blur(12px);">
         <span><span class="dot-live"></span><span style="font-size:0.88rem;color:#f4f4f5;font-weight:700;">Active Agentic Orchestrator</span></span>
         <span style="font-size:0.82rem;color:#71717a;">💬 <b style="color:#c4b5fd;">Copilot Ready</b></span>
         <span style="font-size:0.82rem;color:#71717a;">🔐 <b style="color:#10b981;">RSA-PSS Signed</b></span>
-        <span style="font-size:0.82rem;color:#71717a;">📦 <b style="color:#f4f4f5;">Google TabFM</b></span>
-        <span style="font-size:0.82rem;color:#71717a;">🔮 <b style="color:#06b6d4;">PAIR What-If</b></span>
-        <span style="font-size:0.82rem;color:#71717a;">⚔️ <b style="color:#c4b5fd;">Red Teamer</b>: Active</span>
+        <span style="font-size:0.82rem;color:#f4f4f5;">Google TabFM</span>
+        <span style="font-size:0.82rem;color:#06b6d4;">PAIR What-If</span>
+        <span style="font-size:0.82rem;color:#c4b5fd;">⚔️ Red Teamer</span>
     </div>
     """, unsafe_allow_html=True)
+with col_bm:
+    with st.popover("❓ Guide d'Aide & Tour", use_container_width=True):
+        st.markdown("""
+        ### 📖 Guide Utilisateur & Tour de la Plateforme
+
+        Bienvenue sur **Dataset Automator v4.0** — la première plateforme de MLOps spatial et agentique au monde !
+
+        ---
+
+        #### 🚀 1. Déroulement Pas-à-Pas :
+        1. **🎨 Canvas Spatial (Onglet 1)** :
+           * Importez votre CSV/Excel ou sélectionnez un dataset de test.
+           * Cliquez sur **`▶️ Run Pipeline`** pour observer l'orchestration pas-à-pas.
+           * Validez les portes humaines **HITL (Gate A, B, C, D)** pour guider l'agent.
+           * Consultez le **Terminal de pensée en direct** sous le canvas.
+           * Téléchargez les livrables dans le **Delivery Hub** dès l'étape 7 !
+        
+        2. **💬 Antigravity Copilot (Onglet 3)** :
+           * Choisissez votre modèle (**Gemini 3.5 Flash**, **Pro**, **TabFM**, **Gemma 2**).
+           * Utilisez les puces rapides (ex: *"Pourquoi TabFM ?"*, *"Audit Guardrails"*).
+        
+        3. **🔮 Google PAIR What-If Tool (Onglet 4)** :
+           * Modifiez les curseurs en temps réel pour voir la variation de probabilité et le contrefactuel le plus proche.
+        
+        4. **📑 Google Model Card (Onglet 5)** :
+           * Consultez et téléchargez la fiche d'identité Material Design du modèle champion.
+        
+        5. **⚔️ Red Team Matrix (Onglet 6)** :
+           * Auditez la résistance aux attaques de fuite de données, valeurs extrêmes et biais.
+        
+        6. **📓 Notebook Explorer (Onglet 15)** :
+           * Téléchargez le Notebook de 55 cellules (.ipynb) avec audit forensic **100/100 MLOps** et visualisez le rapport HTML directement dans l'application !
+        
+        ---
+        💡 *Conforme à l'EU AI Act (Articles 12 & 26) et au NIST AI RMF avec signature cryptographique RSASSA-PSS-SHA256.*
+        """)
 with col_br:
     now_str = datetime.datetime.now().strftime("%H:%M:%S")
     st.markdown(f"""
-    <div style="background:rgba(24,24,27,0.85);border:1px solid rgba(39,39,42,0.6);border-radius:14px;padding:12px 20px;margin-bottom:20px;text-align:center;backdrop-filter:blur(12px);">
-        <div style="font-size:0.70rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;">Session Time</div>
-        <div style="font-size:1.25rem;font-weight:800;background:linear-gradient(135deg,#06b6d4,#d946ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-family:'JetBrains Mono',monospace;">{now_str}</div>
+    <div style="background:rgba(24,24,27,0.85);border:1px solid rgba(39,39,42,0.6);border-radius:14px;padding:12px 14px;margin-bottom:20px;text-align:center;backdrop-filter:blur(12px);">
+        <div style="font-size:0.68rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;">Session Time</div>
+        <div style="font-size:1.15rem;font-weight:800;background:linear-gradient(135deg,#06b6d4,#d946ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-family:'JetBrains Mono',monospace;">{now_str}</div>
     </div>
     """, unsafe_allow_html=True)
 
